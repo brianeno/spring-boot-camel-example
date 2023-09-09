@@ -32,7 +32,7 @@ public class FileToS3Route extends RouteBuilder implements ApplicationContextAwa
                 .log("After content length: ${in.header.CamelFileLength}")
                 .setHeader(S3Constants.CONTENT_LENGTH, simple("${in.header.CamelFileLength}"))
                 //This is the filename on the S3 bucket
-                .setHeader(S3Constants.KEY, simple("${in.header.CamelFileNameOnly}"))
+                .setHeader(S3Constants.KEY, simple("${in.header.CamelFileNameOnly}" + "-${date:now:yyyyMMddHH-mm-ss}"))
                 //aws-s3 the camel component and that is how you tell camel where you want to upload.
                 .to("aws-s3://{{awsS3BucketName}}?deleteAfterWrite=false&region={{awsRegion}}&accessKey={{awsAccessKey}}&secretKey=RAW({{awsAccessSecretKey}})")
                 //optionally logging success message
