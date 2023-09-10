@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.brianeno</groupId>
-    <artifactId>spring-boot-cample-example</artifactId>
+    <artifactId>spring-boot-camel-example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-boot-camel-example</name>
     <description>Spring Boot Camel Example</description>
